@@ -1,0 +1,120 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.hightempalarm"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="29"
+9        android:targetSdkVersion="35" />
+10
+11    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+11-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:6:5-7:64
+11-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:7:9-61
+12    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+12-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:9:5-10:76
+12-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:10:9-73
+13    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+13-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:12:5-13:64
+13-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:13:9-61
+14    <uses-permission android:name="android.permission.VIBRATE" />
+14-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:15:5-16:53
+14-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:16:9-50
+15    <uses-permission android:name="android.permission.WAKE_LOCK" />
+15-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:18:5-19:55
+15-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:19:9-52
+16    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+16-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:21:5-22:65
+16-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:22:9-62
+17    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+17-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:24:5-25:68
+17-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:25:9-65
+18
+19    <!--
+20        Kept as fallback for devices where overlay/activity wake behaviour
+21        is restricted.
+22    -->
+23    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+23-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:31:5-32:68
+23-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:32:9-65
+24
+25    <application
+25-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:34:5-90:19
+26        android:allowBackup="false"
+26-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:35:9-36
+27        android:debuggable="true"
+28        android:extractNativeLibs="false"
+29        android:label="@string/app_name"
+29-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:36:9-41
+30        android:supportsRtl="true"
+30-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:37:9-35
+31        android:theme="@style/AppTheme" >
+31-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:38:9-40
+32        <activity
+32-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:40:9-47:40
+33            android:name="com.hightempalarm.AlarmActivity"
+33-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:41:13-42
+34            android:excludeFromRecents="true"
+34-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:42:13-46
+35            android:exported="false"
+35-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:47:13-37
+36            android:launchMode="singleTask"
+36-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:43:13-44
+37            android:showWhenLocked="true"
+37-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:44:13-42
+38            android:theme="@style/AlarmTheme"
+38-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:46:13-46
+39            android:turnScreenOn="true" />
+39-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:45:13-40
+40        <activity
+40-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:49:9-63:20
+41            android:name="com.hightempalarm.MainActivity"
+41-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:50:13-41
+42            android:exported="true" >
+42-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:51:13-36
+43            <intent-filter>
+43-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:53:13-61:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:55:17-56:65
+44-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:56:21-62
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:58:17-59:71
+46-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:59:21-68
+47            </intent-filter>
+48        </activity>
+49
+50        <service
+50-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:65:9-74:19
+51            android:name="com.hightempalarm.TemperatureMonitorService"
+51-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:66:13-54
+52            android:exported="false"
+52-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:67:13-37
+53            android:foregroundServiceType="specialUse" >
+53-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:68:13-55
+54            <property
+54-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:70:13-72:143
+55                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+55-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:71:17-76
+56                android:value="Monitors battery temperature while charging and alerts the user when the configured temperature is reached." />
+56-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:72:17-140
+57        </service>
+58
+59        <receiver
+59-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:76:9-88:20
+60            android:name="com.hightempalarm.BootReceiver"
+60-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:77:13-41
+61            android:enabled="true"
+61-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:78:13-35
+62            android:exported="true" >
+62-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:79:13-36
+63            <intent-filter>
+63-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:81:13-86:29
+64                <action android:name="android.intent.action.BOOT_COMPLETED" />
+64-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:83:17-84:75
+64-->C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\AndroidManifest.xml:84:21-72
+65            </intent-filter>
+66        </receiver>
+67    </application>
+68
+69</manifest>

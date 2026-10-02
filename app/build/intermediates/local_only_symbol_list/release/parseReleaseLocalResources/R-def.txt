@@ -1,0 +1,29 @@
+R_DEF: Internal format may change without notice
+local
+color background
+color green
+color primary
+color primary_dark
+color surface
+color surface_light
+color text_muted
+color text_primary
+color text_secondary
+drawable button_primary
+drawable button_secondary
+drawable temperature_box
+id alarmRoot
+id alarmTemperature
+id alarmThreshold
+id chargingStatus
+id currentTemperature
+id monitorButton
+id monitorStatus
+id overlayButton
+id stopAlarmButton
+id thresholdInput
+layout activity_alarm
+layout activity_main
+string app_name
+style AlarmTheme
+style AppTheme

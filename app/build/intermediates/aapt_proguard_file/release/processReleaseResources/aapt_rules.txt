@@ -1,0 +1,4 @@
+-keep class com.hightempalarm.AlarmActivity { <init>(); }
+-keep class com.hightempalarm.BootReceiver { <init>(); }
+-keep class com.hightempalarm.MainActivity { <init>(); }
+-keep class com.hightempalarm.TemperatureMonitorService { <init>(); }

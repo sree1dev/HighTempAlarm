@@ -1,0 +1,8 @@
+com.hightempalarm.app-pngs-0 C:\Users\ghost\Desktop\HighTempAlarm\app\build\generated\res\pngs\release
+com.hightempalarm.app-resValues-1 C:\Users\ghost\Desktop\HighTempAlarm\app\build\generated\res\resValues\release
+com.hightempalarm.app-packageReleaseResources-2 C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\incremental\release\packageReleaseResources\merged.dir
+com.hightempalarm.app-packageReleaseResources-3 C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\incremental\release\packageReleaseResources\stripped.dir
+com.hightempalarm.app-merged-not-compiled-resources-4 C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\merged-not-compiled-resources\release
+com.hightempalarm.app-release-5 C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\merged_res\release\mergeReleaseResources
+com.hightempalarm.app-main-6 C:\Users\ghost\Desktop\HighTempAlarm\app\src\main\res
+com.hightempalarm.app-release-7 C:\Users\ghost\Desktop\HighTempAlarm\app\src\release\res

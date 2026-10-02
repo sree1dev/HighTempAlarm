@@ -1,0 +1,326 @@
+package com.hightempalarm
+
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.app.Service
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.content.pm.ServiceInfo
+import android.os.BatteryManager
+import android.os.Build
+import android.os.IBinder
+
+class TemperatureMonitorService : Service() {
+
+    companion object {
+
+        const val ACTION_START =
+            "com.hightempalarm.START"
+
+        const val ACTION_STOP_ALARM =
+            "com.hightempalarm.STOP_ALARM"
+
+        const val ACTION_STOP_SERVICE =
+            "com.hightempalarm.STOP_SERVICE"
+
+        private const val MONITOR_CHANNEL =
+            "temperature_monitor"
+
+        private const val NOTIFICATION_ID = 1001
+    }
+
+    private var receiverRegistered = false
+
+    private val batteryReceiver =
+        object : BroadcastReceiver() {
+
+            override fun onReceive(
+                context: Context?,
+                intent: Intent?
+            ) {
+
+                if (
+                    intent?.action !=
+                    Intent.ACTION_BATTERY_CHANGED
+                ) {
+                    return
+                }
+
+                val rawTemperature =
+                    intent.getIntExtra(
+                        BatteryManager.EXTRA_TEMPERATURE,
+                        0
+                    )
+
+                val temperature =
+                    rawTemperature / 10f
+
+                val plugged =
+                    intent.getIntExtra(
+                        BatteryManager.EXTRA_PLUGGED,
+                        0
+                    ) != 0
+
+                processBatteryState(
+                    temperature,
+                    plugged
+                )
+            }
+        }
+
+    override fun onCreate() {
+        super.onCreate()
+
+        createNotificationChannel()
+
+        startForegroundSafely(
+            createMonitorNotification(null, false)
+        )
+
+        registerBatteryReceiver()
+    }
+
+    override fun onStartCommand(
+        intent: Intent?,
+        flags: Int,
+        startId: Int
+    ): Int {
+
+        when (intent?.action) {
+
+            ACTION_STOP_ALARM -> {
+                AlarmController.stop(this)
+            }
+
+            ACTION_STOP_SERVICE -> {
+
+                AlarmController.stop(this)
+
+                getSharedPreferences(
+                    MainActivity.PREFS_NAME,
+                    Context.MODE_PRIVATE
+                )
+                    .edit()
+                    .putBoolean(
+                        MainActivity.KEY_ENABLED,
+                        false
+                    )
+                    .apply()
+
+                stopSelf()
+
+                return START_NOT_STICKY
+            }
+        }
+
+        return START_STICKY
+    }
+
+    private fun processBatteryState(
+        temperature: Float,
+        plugged: Boolean
+    ) {
+
+        val prefs =
+            getSharedPreferences(
+                MainActivity.PREFS_NAME,
+                Context.MODE_PRIVATE
+            )
+
+        val enabled =
+            prefs.getBoolean(
+                MainActivity.KEY_ENABLED,
+                false
+            )
+
+        if (!enabled) {
+            AlarmController.stop(this)
+            stopSelf()
+            return
+        }
+
+        val threshold =
+            prefs.getFloat(
+                MainActivity.KEY_THRESHOLD,
+                MainActivity.DEFAULT_THRESHOLD
+            )
+
+        val manager =
+            getSystemService(
+                NotificationManager::class.java
+            )
+
+        manager.notify(
+            NOTIFICATION_ID,
+            createMonitorNotification(
+                temperature,
+                plugged
+            )
+        )
+
+        if (!plugged) {
+
+            if (AlarmController.isActive()) {
+                AlarmController.stop(this)
+            }
+
+            return
+        }
+
+        if (
+            temperature >= threshold &&
+            !AlarmController.isActive()
+        ) {
+
+            AlarmController.start(
+                this,
+                temperature,
+                threshold
+            )
+        }
+    }
+
+    private fun registerBatteryReceiver() {
+
+        if (receiverRegistered) {
+            return
+        }
+
+        val filter =
+            IntentFilter(
+                Intent.ACTION_BATTERY_CHANGED
+            )
+
+        registerReceiver(
+            batteryReceiver,
+            filter
+        )
+
+        receiverRegistered = true
+    }
+
+    private fun createMonitorNotification(
+        temperature: Float?,
+        plugged: Boolean
+    ): Notification {
+
+        val openApp =
+            Intent(
+                this,
+                MainActivity::class.java
+            )
+
+        val pendingIntent =
+            PendingIntent.getActivity(
+                this,
+                10,
+                openApp,
+                PendingIntent.FLAG_UPDATE_CURRENT or
+                    PendingIntent.FLAG_IMMUTABLE
+            )
+
+        val text =
+            if (temperature == null) {
+                "Waiting for battery temperature..."
+            } else {
+
+                val chargingText =
+                    if (plugged) {
+                        "charging"
+                    } else {
+                        "not charging"
+                    }
+
+                String.format(
+                    "%.1f°C • %s",
+                    temperature,
+                    chargingText
+                )
+            }
+
+        return Notification.Builder(
+            this,
+            MONITOR_CHANNEL
+        )
+            .setContentTitle(
+                "Heat Guard monitoring"
+            )
+            .setContentText(text)
+            .setSmallIcon(
+                android.R.drawable.ic_lock_idle_charging
+            )
+            .setOngoing(true)
+            .setOnlyAlertOnce(true)
+            .setContentIntent(pendingIntent)
+            .build()
+    }
+
+    private fun createNotificationChannel() {
+
+        val manager =
+            getSystemService(
+                NotificationManager::class.java
+            )
+
+        val channel =
+            NotificationChannel(
+                MONITOR_CHANNEL,
+                "Heat Guard monitoring",
+                NotificationManager.IMPORTANCE_LOW
+            )
+
+        channel.description =
+            "Battery temperature monitoring"
+
+        channel.setSound(null, null)
+
+        manager.createNotificationChannel(channel)
+    }
+
+    private fun startForegroundSafely(
+        notification: Notification
+    ) {
+
+        if (Build.VERSION.SDK_INT >= 34) {
+
+            startForeground(
+                NOTIFICATION_ID,
+                notification,
+                ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE
+            )
+
+        } else {
+
+            startForeground(
+                NOTIFICATION_ID,
+                notification
+            )
+        }
+    }
+
+    override fun onDestroy() {
+
+        if (receiverRegistered) {
+
+            try {
+                unregisterReceiver(
+                    batteryReceiver
+                )
+            } catch (_: Exception) {
+            }
+
+            receiverRegistered = false
+        }
+
+        super.onDestroy()
+    }
+
+    override fun onBind(
+        intent: Intent?
+    ): IBinder? = null
+}
+

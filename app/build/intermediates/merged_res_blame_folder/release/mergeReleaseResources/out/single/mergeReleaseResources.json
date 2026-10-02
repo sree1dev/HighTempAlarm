@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "com.hightempalarm.app-release-5:/drawable_button_primary.xml.flat",
+        "source": "com.hightempalarm.app-main-6:/drawable/button_primary.xml"
+    },
+    {
+        "merged": "com.hightempalarm.app-release-5:/drawable_button_secondary.xml.flat",
+        "source": "com.hightempalarm.app-main-6:/drawable/button_secondary.xml"
+    },
+    {
+        "merged": "com.hightempalarm.app-release-5:/layout_activity_main.xml.flat",
+        "source": "com.hightempalarm.app-main-6:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.hightempalarm.app-release-5:/drawable_temperature_box.xml.flat",
+        "source": "com.hightempalarm.app-main-6:/drawable/temperature_box.xml"
+    },
+    {
+        "merged": "com.hightempalarm.app-release-5:/layout_activity_alarm.xml.flat",
+        "source": "com.hightempalarm.app-main-6:/layout/activity_alarm.xml"
+    }
+]

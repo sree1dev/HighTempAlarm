@@ -1,0 +1,8 @@
+com.hightempalarm.BootReceiver
+com.hightempalarm.TemperatureMonitorService
+com.hightempalarm.AlarmActivity
+com.hightempalarm.MainActivity
+com.hightempalarm.BootReceiver: BootReceiver()
+com.hightempalarm.AlarmActivity: AlarmActivity()
+com.hightempalarm.TemperatureMonitorService: TemperatureMonitorService()
+com.hightempalarm.MainActivity: MainActivity()

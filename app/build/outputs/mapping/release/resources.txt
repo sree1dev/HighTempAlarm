@@ -1,0 +1,71 @@
+Marking id:alarmTemperature:2130903041 reachable: referenced from C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\dex\release\minifyReleaseWithR8\classes.dex
+Marking id:alarmThreshold:2130903042 reachable: referenced from C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\dex\release\minifyReleaseWithR8\classes.dex
+Marking layout:activity_alarm:2130968576 reachable: referenced from C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\dex\release\minifyReleaseWithR8\classes.dex
+Marking id:alarmRoot:2130903040 reachable: referenced from C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\dex\release\minifyReleaseWithR8\classes.dex
+Marking id:stopAlarmButton:2130903048 reachable: referenced from C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\dex\release\minifyReleaseWithR8\classes.dex
+Marking layout:activity_main:2130968577 reachable: referenced from C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\dex\release\minifyReleaseWithR8\classes.dex
+Marking id:currentTemperature:2130903044 reachable: referenced from C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\dex\release\minifyReleaseWithR8\classes.dex
+Marking id:chargingStatus:2130903043 reachable: referenced from C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\dex\release\minifyReleaseWithR8\classes.dex
+Marking id:thresholdInput:2130903049 reachable: referenced from C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\dex\release\minifyReleaseWithR8\classes.dex
+Marking id:monitorStatus:2130903046 reachable: referenced from C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\dex\release\minifyReleaseWithR8\classes.dex
+Marking id:monitorButton:2130903045 reachable: referenced from C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\dex\release\minifyReleaseWithR8\classes.dex
+Marking id:overlayButton:2130903047 reachable: referenced from C:\Users\ghost\Desktop\HighTempAlarm\app\build\intermediates\dex\release\minifyReleaseWithR8\classes.dex
+@color/background : reachable=false
+@color/green : reachable=false
+@color/primary : reachable=false
+@color/primary_dark : reachable=false
+@color/surface : reachable=false
+@color/surface_light : reachable=false
+@color/text_muted : reachable=false
+@color/text_primary : reachable=false
+@color/text_secondary : reachable=false
+@drawable/button_primary : reachable=false
+@drawable/button_secondary : reachable=false
+@drawable/temperature_box : reachable=false
+@id/alarmRoot : reachable=true
+@id/alarmTemperature : reachable=true
+@id/alarmThreshold : reachable=true
+@id/chargingStatus : reachable=true
+@id/currentTemperature : reachable=true
+@id/monitorButton : reachable=true
+@id/monitorStatus : reachable=true
+@id/overlayButton : reachable=true
+@id/stopAlarmButton : reachable=true
+@id/thresholdInput : reachable=true
+@layout/activity_alarm : reachable=true
+    @drawable/button_secondary
+@layout/activity_main : reachable=true
+    @drawable/temperature_box
+    @drawable/button_primary
+    @drawable/button_secondary
+@string/app_name : reachable=true
+@style/AlarmTheme : reachable=true
+@style/AppTheme : reachable=true
+
+The root reachable resources are:
+ id:alarmRoot:2130903040
+ id:alarmTemperature:2130903041
+ id:alarmThreshold:2130903042
+ id:chargingStatus:2130903043
+ id:currentTemperature:2130903044
+ id:monitorButton:2130903045
+ id:monitorStatus:2130903046
+ id:overlayButton:2130903047
+ id:stopAlarmButton:2130903048
+ id:thresholdInput:2130903049
+ layout:activity_alarm:2130968576
+ layout:activity_main:2130968577
+ string:app_name:2131034112
+ style:AlarmTheme:2131099648
+ style:AppTheme:2131099649
+Unused resources are: 
+ color:background:2130771968
+ color:green:2130771969
+ color:primary:2130771970
+ color:primary_dark:2130771971
+ color:surface:2130771972
+ color:surface_light:2130771973
+ color:text_muted:2130771974
+ color:text_primary:2130771975
+ color:text_secondary:2130771976
+Resource shrinking did not work (grew from 5654 to 5712); using original instead

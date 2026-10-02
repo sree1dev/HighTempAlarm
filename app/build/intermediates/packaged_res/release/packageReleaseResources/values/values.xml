@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#0F1115</color>
+    <color name="green">#49D58A</color>
+    <color name="primary">#FF5A52</color>
+    <color name="primary_dark">#E54842</color>
+    <color name="surface">#181B20</color>
+    <color name="surface_light">#22262D</color>
+    <color name="text_muted">#7F858F</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#AEB3BC</color>
+    <string name="app_name">Heat Guard</string>
+    <style name="AlarmTheme" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowBackground">#B71C1C</item>
+        <item name="android:navigationBarColor">#B71C1C</item>
+        <item name="android:statusBarColor">#B71C1C</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <style name="AppTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">#101114</item>
+        <item name="android:statusBarColor">#101114</item>
+        <item name="android:windowBackground">#101114</item>
+        <item name="android:colorAccent">#FF5252</item>
+    </style>
+</resources>

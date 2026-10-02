@@ -1,0 +1,62 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.hightempalarm.app-mergeReleaseResources-2:/values/values.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ghost\\Desktop\\HighTempAlarm\\app\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "47",
+                        "endOffsets": "98"
+                    },
+                    "to": {
+                        "startLines": "11",
+                        "startColumns": "4",
+                        "startOffsets": "460",
+                        "endColumns": "47",
+                        "endOffsets": "503"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ghost\\Desktop\\HighTempAlarm\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "12,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "508,56",
+                        "endLines": "18,10",
+                        "endColumns": "12,12",
+                        "endOffsets": "886,502"
+                    },
+                    "to": {
+                        "startLines": "12,19",
+                        "startColumns": "4,4",
+                        "startOffsets": "508,891",
+                        "endLines": "18,26",
+                        "endColumns": "12,12",
+                        "endOffsets": "886,1337"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ghost\\Desktop\\HighTempAlarm\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "3,13,9,11,5,7,19,15,17",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "56,285,194,237,102,145,424,326,374",
+                        "endColumns": "44,39,41,46,41,47,44,46,48",
+                        "endOffsets": "96,320,231,279,139,188,464,368,418"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,100,140,182,229,271,319,364,411",
+                        "endColumns": "44,39,41,46,41,47,44,46,48",
+                        "endOffsets": "95,135,177,224,266,314,359,406,455"
+                    }
+                }
+            ]
+        }
+    ]
+}
